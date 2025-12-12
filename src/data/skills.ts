@@ -5,49 +5,66 @@ export interface Skill {
 
 export interface SkillCategory {
   category: string;
+  icon: string;
   skills: Skill[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
     category: "Frontend",
+    icon: "Monitor",
     skills: [
-      { name: "React" },
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "JavaScript" },
-      { name: "Tailwind CSS" },
-      { name: "Framer Motion" },
-      { name: "HTML5" },
-      { name: "CSS3" },
+      { name: "React", icon: "Atom" },
+      { name: "Next.js", icon: "Globe" },
+      { name: "TypeScript", icon: "FileCode" },
+      { name: "JavaScript", icon: "FileJson" },
+      { name: "Tailwind CSS", icon: "Palette" },
+      { name: "Framer Motion", icon: "Sparkles" },
+      { name: "HTML5", icon: "Code" },
+      { name: "CSS3", icon: "Paintbrush" },
     ]
   },
   {
     category: "Backend",
+    icon: "Server",
     skills: [
-      { name: "Django" },
-      { name: "Python" },
-      { name: "Node.js" },
-      { name: "REST APIs" },
+      { name: "Django", icon: "Layers" },
+      { name: "Python", icon: "Terminal" },
+      { name: "Node.js", icon: "Hexagon" },
+      { name: "REST APIs", icon: "Link" },
+    ]
+  },
+  {
+    category: "ML & AI",
+    icon: "Brain",
+    skills: [
+      { name: "Python (ML)", icon: "Terminal" },
+      { name: "Machine Learning", icon: "Cpu" },
+      { name: "Data Analysis", icon: "BarChart" },
+      { name: "TensorFlow", icon: "Workflow" },
+      { name: "NumPy", icon: "Calculator" },
+      { name: "Pandas", icon: "Table" },
     ]
   },
   {
     category: "Database",
+    icon: "Database",
     skills: [
-      { name: "PostgreSQL" },
-      { name: "SQLite" },
-      { name: "MongoDB" },
+      { name: "PostgreSQL", icon: "Database" },
+      { name: "SQLite", icon: "HardDrive" },
+      { name: "MongoDB", icon: "Leaf" },
     ]
   },
   {
     category: "Tools & Others",
+    icon: "Settings",
     skills: [
-      { name: "Git" },
-      { name: "GitHub" },
-      { name: "VS Code" },
-      { name: "Vite" },
-      { name: "Stripe" },
-      { name: "Vercel" },
+      { name: "Git", icon: "GitBranch" },
+      { name: "GitHub", icon: "Github" },
+      { name: "VS Code", icon: "Code2" },
+      { name: "Vite", icon: "Zap" },
+      { name: "Stripe", icon: "CreditCard" },
+      { name: "Vercel", icon: "Triangle" },
     ]
   }
 ];

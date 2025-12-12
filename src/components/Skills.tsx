@@ -1,5 +1,18 @@
 import { skillCategories } from "@/data/skills";
 import { Badge } from "@/components/ui/badge";
+import { 
+  Monitor, Server, Brain, Database, Settings, 
+  Atom, Globe, FileCode, FileJson, Palette, Sparkles, Code, Paintbrush,
+  Layers, Terminal, Hexagon, Link, Cpu, BarChart, Workflow, Calculator, Table,
+  HardDrive, Leaf, GitBranch, Github, Code2, Zap, CreditCard, Triangle
+} from "lucide-react";
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Monitor, Server, Brain, Database, Settings,
+  Atom, Globe, FileCode, FileJson, Palette, Sparkles, Code, Paintbrush,
+  Layers, Terminal, Hexagon, Link, Cpu, BarChart, Workflow, Calculator, Table,
+  HardDrive, Leaf, GitBranch, Github, Code2, Zap, CreditCard, Triangle
+};
 
 const Skills = () => {
   return (
@@ -20,29 +33,41 @@ const Skills = () => {
           </div>
 
           {/* Skills grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skillCategories.map((category, index) => (
-              <div
-                key={category.category}
-                className="p-6 rounded-xl border border-border bg-background/50 backdrop-blur animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="font-mono text-primary text-sm mb-4">
-                  {`<${category.category} />`}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge
-                      key={skill.name}
-                      variant="outline"
-                      className="border-border hover:border-primary hover:text-primary transition-colors cursor-default"
-                    >
-                      {skill.name}
-                    </Badge>
-                  ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {skillCategories.map((category, index) => {
+              const CategoryIcon = iconMap[category.icon];
+              return (
+                <div
+                  key={category.category}
+                  className="p-6 rounded-xl border border-border bg-background/50 backdrop-blur animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    {CategoryIcon && (
+                      <CategoryIcon className="w-5 h-5 text-primary" />
+                    )}
+                    <h3 className="font-mono text-primary text-sm">
+                      {`<${category.category} />`}
+                    </h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => {
+                      const SkillIcon = skill.icon ? iconMap[skill.icon] : null;
+                      return (
+                        <Badge
+                          key={skill.name}
+                          variant="outline"
+                          className="border-border hover:border-primary hover:text-primary transition-colors cursor-default flex items-center gap-1.5"
+                        >
+                          {SkillIcon && <SkillIcon className="w-3 h-3" />}
+                          {skill.name}
+                        </Badge>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
