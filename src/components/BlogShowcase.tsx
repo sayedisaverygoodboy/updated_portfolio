@@ -10,7 +10,7 @@ const blogPosts = [
     date: "Dec 10, 2025",
     readingTime: "6 min read",
     tags: ["AI", "Automation"],
-    image: "/images/blog-ai.jpg",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
     url: "/blogs/ai-automation",
   },
   {
@@ -20,7 +20,17 @@ const blogPosts = [
     date: "Aug 14, 2025",
     readingTime: "5 min read",
     tags: ["Web", "Leadership"],
-    image: "/images/blog-rpicc.jpg",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+    url: "/blogs/rpicc-journey",
+  },
+   {
+    title: "Building a Web App with React and Django",
+    summary:
+      "The roadmap that guided the redesign, collaboration workflow, and launch of the new club platform.",
+    date: "Aug 14, 2025",
+    readingTime: "5 min read",
+    tags: ["Web", "Leadership"],
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
     url: "/blogs/rpicc-journey",
   },
   {
@@ -30,7 +40,7 @@ const blogPosts = [
     date: "May 02, 2025",
     readingTime: "4 min read",
     tags: ["DSA", "Competition"],
-    image: "/images/blog-cp.jpg",
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
     url: "/blogs/cp-progress",
   },
 ];
@@ -40,7 +50,19 @@ const BlogShowcase = () => {
 
   return (
     <section className="py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Section header */}
+          <div className="text-center mb-16">
+            <span className="text-primary font-mono text-sm mb-4 block">
+              // My Blog
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              My <span className="gradient-text">Blog</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Check out my latest blog posts and insights.
+            </p>
+          </div>
         <div className="flex flex-col gap-8">
           <div className="rounded-[2rem] border border-border bg-card/70 p-8 backdrop-blur-xl">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">

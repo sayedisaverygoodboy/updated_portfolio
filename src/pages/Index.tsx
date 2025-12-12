@@ -8,6 +8,7 @@ import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Certifications from "@/components/Certifications";
+import BlogShowcase from "@/components/BlogShowcase";
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
           <Skills />
           <Certifications/>
           <Education />
+          <BlogShowcase/>
           <Contact />
         </main>
         <Footer />
