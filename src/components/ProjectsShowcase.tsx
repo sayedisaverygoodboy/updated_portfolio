@@ -24,7 +24,7 @@ const ProjectsShowcase = () => {
           </div>
 
           {/* Projects grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -38,7 +38,7 @@ const ProjectsShowcase = () => {
                     alt={`${project.title} preview`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" /> */}
                   
                   {/* Featured badge for first project */}
                   {index === 0 && (
@@ -61,11 +61,11 @@ const ProjectsShowcase = () => {
                     
                     {/* Role badge */}
                     <div className="flex items-center gap-2 text-sm">
-                      <Badge variant="outline" className="border-secondary text-secondary">
+                      <Badge variant="outline" className="border-secondary text-gray-500">
                         {project.role}
                       </Badge>
                       {project.teamSize && (
-                        <span className="flex items-center gap-1 text-muted-foreground">
+                        <span className="flex items-center gap-1 text-gray-500">
                           <Users className="w-3 h-3" />
                           {project.teamSize}
                         </span>
@@ -120,8 +120,15 @@ const ProjectsShowcase = () => {
                         </Button>
                       </a>
                     )}
-                    {project.githubUrl && project.githubUrl !== "#" && (
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    {project.github_frontend && project.github_frontend !== "#" && (
+                      <a href={project.github_frontend} target="_blank" rel="noopener noreferrer">
+                        <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary">
+                          <Github className="w-4 h-4" />
+                        </Button>
+                      </a>
+                    )}
+                    {project.github_backend && project.github_backend !== "#" && (
+                      <a href={project.github_backend} target="_blank" rel="noopener noreferrer">
                         <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary">
                           <Github className="w-4 h-4" />
                         </Button>

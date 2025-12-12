@@ -9,15 +9,17 @@ export interface Project {
   features: string[];
   metrics: { label: string; value: string }[];
   liveUrl?: string;
-  githubUrl?: string;
+  github_frontend?: string;
+  github_backend?: string;
   image: string;
+  more_images?: string[];
 }
 
 export const projects: Project[] = [
   {
     id: "rpi-computer-club",
     title: "RPI Computer Club",
-    shortDescription: "Frontend App for Rajshahi Polytechnic Institute Computer Club",
+    shortDescription: "App for Rajshahi Polytechnic Institute Computer Club",
     fullDescription: "Built a modern, responsive platform for the Rajshahi Polytechnic Institute Computer Club. Created fast SPA with React + Vite, using Hooks and Context API. Integrated animations via Framer Motion; fully mobile responsive. Linked social media and added event countdowns & content sections.",
     role: "Lead Developer",
     teamSize: "3 People Team",
@@ -35,8 +37,10 @@ export const projects: Project[] = [
       { label: "Event Participation Increase", value: "40%" }
     ],
     liveUrl: "https://beta-rpicc.vercel.app",
-    githubUrl: "#",
-    image: "/placeholder.svg"
+    github_frontend: "https://github.com/RPI-Computer-Club-rpicc/rpicc-client",
+    github_backend: "https://github.com/RPI-Computer-Club-rpicc/rpicc-client",
+    image: "/images/rpicc/1.png",
+    more_images:["/images/rpicc/1.png","/images/rpicc/3.png","/images/rpicc/4.png","/images/rpicc/5.png"],
   },
   {
     id: "dumbbell-don",
@@ -57,8 +61,10 @@ export const projects: Project[] = [
       { label: "Payment Success Rate", value: "99%" }
     ],
     liveUrl: "#",
-    githubUrl: "#",
-    image: "/placeholder.svg"
+    github_frontend: "#",
+    github_backend: "#",
+    image: "/images/dumbbell-don/1.png",
+    more_images:["/images/dumbbell-don/2.png","/images/dumbbell-don/3.png","/images/dumbbell-don/4.png","/images/dumbbell-don/5.png"],
   },
   {
     id: "djb-ems",
@@ -79,8 +85,10 @@ export const projects: Project[] = [
       { label: "Workflow Reduction", value: "40%" }
     ],
     liveUrl: "#",
-    githubUrl: "#",
-    image: "/placeholder.svg"
+    github_frontend: "#",
+    github_backend: "#",
+    image: "/images/djb-ems/1.png",
+    more_images:["/images/djb-ems/2.png","/images/djb-ems/3.png","/images/djb-ems/4.png","/images/djb-ems/5.png"],
   }
 ];
 

@@ -45,11 +45,11 @@ const ProjectDetail = () => {
                 
                 {/* Role and team */}
                 <div className="flex flex-wrap items-center gap-4 mb-6">
-                  <Badge variant="outline" className="border-secondary text-secondary text-base px-4 py-1">
+                  <Badge variant="outline" className="border-gray text-gray-600 px-4 py-1">
                     {project.role}
                   </Badge>
                   {project.teamSize && (
-                    <span className="flex items-center gap-2 text-muted-foreground">
+                    <span className="flex items-center gap-2 text-gray-600">
                       <Users className="w-4 h-4" />
                       {project.teamSize}
                     </span>
@@ -69,15 +69,37 @@ const ProjectDetail = () => {
                     </Button>
                   </a>
                 )}
-                {project.githubUrl && project.githubUrl !== "#" && (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                {project.github_frontend && project.github_frontend !== "#" && (
+                  <a href={project.github_frontend} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="border-border">
                       <Github className="w-4 h-4 mr-2" />
-                      View Source Code
+                      View Source Code Frontend
+                    </Button>
+                  </a>
+                )}
+
+                {project.github_backend && project.github_backend !== "#" && (
+                  <a href={project.github_backend} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="border-border">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source Code Backend
                     </Button>
                   </a>
                 )}
               </div>
+              {project.more_images?.length ? (
+                <div className="my-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {project.more_images.map((image, index) => (
+                    <div key={index} className="overflow-hidden rounded-2xl border border-border bg-muted/10 shadow-sm">
+                      <img
+                        src={image}
+                        alt={`${project.title} gallery ${index + 1}`}
+                        className="h-48 w-full object-cover transition duration-500 ease-out hover:scale-[1.03]"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : null}
 
               {/* Metrics */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 animate-fade-in" style={{ animationDelay: "0.15s" }}>
