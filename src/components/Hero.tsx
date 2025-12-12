@@ -1,6 +1,7 @@
 import { ArrowDown, Github, Linkedin, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { aboutData } from "@/data/skills";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -59,7 +60,7 @@ const Hero = () => {
                 onClick={() => window.open("https://drive.google.com/file/d/12ZwVZjGhsDgOXRRHQtsC3JoMc0FHatmX/view?usp=sharing", "_blank")}
               >
                 Download Resume
-              </Button>
+              </Button> 
             </div>
           </div>
 
