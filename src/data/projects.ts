@@ -10,7 +10,7 @@ export interface Project {
   metrics: { label: string; value: string }[];
   liveUrl?: string;
   githubUrl?: string;
-  image?: string;
+  image: string;
 }
 
 export const projects: Project[] = [
@@ -35,7 +35,8 @@ export const projects: Project[] = [
       { label: "Event Participation Increase", value: "40%" }
     ],
     liveUrl: "https://beta-rpicc.vercel.app",
-    githubUrl: "#"
+    githubUrl: "#",
+    image: "/placeholder.svg"
   },
   {
     id: "dumbbell-don",
@@ -56,7 +57,8 @@ export const projects: Project[] = [
       { label: "Payment Success Rate", value: "99%" }
     ],
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "#",
+    image: "/placeholder.svg"
   },
   {
     id: "djb-ems",
@@ -77,7 +79,8 @@ export const projects: Project[] = [
       { label: "Workflow Reduction", value: "40%" }
     ],
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "#",
+    image: "/placeholder.svg"
   }
 ];
 

@@ -28,93 +28,106 @@ const ProjectsShowcase = () => {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className="group relative p-6 rounded-xl border border-border bg-card/30 backdrop-blur hover:border-primary/50 transition-all duration-300 animate-fade-in"
+                className="group relative rounded-xl border border-border bg-card/30 backdrop-blur hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Featured badge for first project */}
-                {index === 0 && (
-                  <Badge className="absolute -top-3 left-4 bg-primary text-primary-foreground">
-                    Featured
-                  </Badge>
-                )}
-
-                {/* Project header */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    {project.shortDescription}
-                  </p>
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden bg-muted">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                   
-                  {/* Role badge */}
-                  <div className="flex items-center gap-2 text-sm">
-                    <Badge variant="outline" className="border-secondary text-secondary">
-                      {project.role}
+                  {/* Featured badge for first project */}
+                  {index === 0 && (
+                    <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+                      Featured
                     </Badge>
-                    {project.teamSize && (
-                      <span className="flex items-center gap-1 text-muted-foreground">
-                        <Users className="w-3 h-3" />
-                        {project.teamSize}
-                      </span>
+                  )}
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  {/* Project header */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {project.shortDescription}
+                    </p>
+                    
+                    {/* Role badge */}
+                    <div className="flex items-center gap-2 text-sm">
+                      <Badge variant="outline" className="border-secondary text-secondary">
+                        {project.role}
+                      </Badge>
+                      {project.teamSize && (
+                        <span className="flex items-center gap-1 text-muted-foreground">
+                          <Users className="w-3 h-3" />
+                          {project.teamSize}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="flex flex-wrap gap-3 mb-4">
+                    {project.metrics.slice(0, 2).map((metric, i) => (
+                      <div key={i} className="flex items-center gap-1 text-sm">
+                        <TrendingUp className="w-3 h-3 text-primary" />
+                        <span className="font-semibold text-primary">{metric.value}</span>
+                        <span className="text-muted-foreground">{metric.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.techStack.slice(0, 4).map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="bg-muted text-muted-foreground text-xs"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                    {project.techStack.length > 4 && (
+                      <Badge variant="secondary" className="bg-muted text-muted-foreground text-xs">
+                        +{project.techStack.length - 4}
+                      </Badge>
                     )}
                   </div>
-                </div>
 
-                {/* Metrics */}
-                <div className="flex flex-wrap gap-3 mb-4">
-                  {project.metrics.slice(0, 2).map((metric, i) => (
-                    <div key={i} className="flex items-center gap-1 text-sm">
-                      <TrendingUp className="w-3 h-3 text-primary" />
-                      <span className="font-semibold text-primary">{metric.value}</span>
-                      <span className="text-muted-foreground">{metric.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.techStack.slice(0, 4).map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="bg-muted text-muted-foreground text-xs"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.techStack.length > 4 && (
-                    <Badge variant="secondary" className="bg-muted text-muted-foreground text-xs">
-                      +{project.techStack.length - 4}
-                    </Badge>
-                  )}
-                </div>
-
-                {/* Actions */}
-                <div className="flex items-center gap-3">
-                  <Link to={`/project/${project.id}`} className="flex-1">
-                    <Button
-                      variant="outline"
-                      className="w-full border-primary text-primary hover:bg-primary/10 group/btn"
-                    >
-                      View Details
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                  {project.liveUrl && project.liveUrl !== "#" && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary">
-                        <ExternalLink className="w-4 h-4" />
+                  {/* Actions */}
+                  <div className="flex items-center gap-3">
+                    <Link to={`/project/${project.id}`} className="flex-1">
+                      <Button
+                        variant="outline"
+                        className="w-full border-primary text-primary hover:bg-primary/10 group/btn"
+                      >
+                        View Details
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
-                    </a>
-                  )}
-                  {project.githubUrl && project.githubUrl !== "#" && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary">
-                        <Github className="w-4 h-4" />
-                      </Button>
-                    </a>
-                  )}
+                    </Link>
+                    {project.liveUrl && project.liveUrl !== "#" && (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary">
+                          <ExternalLink className="w-4 h-4" />
+                        </Button>
+                      </a>
+                    )}
+                    {project.githubUrl && project.githubUrl !== "#" && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary">
+                          <Github className="w-4 h-4" />
+                        </Button>
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 {/* Hover glow effect */}
