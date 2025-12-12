@@ -63,8 +63,8 @@ export const projects: Project[] = [
     liveUrl: "#",
     github_frontend: "#",
     github_backend: "#",
-    image: "/images/dumbbell-don/1.png",
-    more_images:["/images/dumbbell-don/2.png","/images/dumbbell-don/3.png","/images/dumbbell-don/4.png","/images/dumbbell-don/5.png"],
+    image: "/images/dumbbell_don/1.png",
+    more_images:["/images/dumbbell_don/2.png","/images/dumbbell_don/3.png","/images/dumbbell_don/4.png","/images/dumbbell_don/5.png"],
   },
   {
     id: "djb-ems",
@@ -87,8 +87,8 @@ export const projects: Project[] = [
     liveUrl: "#",
     github_frontend: "#",
     github_backend: "#",
-    image: "/images/djb-ems/1.png",
-    more_images:["/images/djb-ems/2.png","/images/djb-ems/3.png","/images/djb-ems/4.png","/images/djb-ems/5.png"],
+    image: "/images/djb_ems/1.png",
+    more_images:["/images/djb_ems/2.png","/images/djb_ems/3.png","/images/djb_ems/4.png","/images/djb_ems/5.png"],
   }
 ];
 
