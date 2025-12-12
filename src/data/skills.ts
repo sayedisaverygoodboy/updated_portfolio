@@ -71,7 +71,7 @@ export const skillCategories: SkillCategory[] = [
 
 export const aboutData = {
   name: "Abu Sayed",
-  title: "Frontend & Full-Stack Developer",
+  title: "Full-Stack Developer ",
   tagline: "Building digital experiences that make an impact",
   summary: "Passionate developer focused on creating elegant, user-centric web applications. I combine clean code with creative design to build solutions that not only work flawlessly but also delight users.",
   careerObjective: "To leverage my technical skills and creative problem-solving abilities to build innovative web solutions that make a meaningful impact. I thrive in collaborative environments where I can contribute to team success while continuously learning and growing as a developer.",
@@ -92,10 +92,10 @@ export const aboutData = {
     highlights: ["Strong foundation in programming", "Focus on practical application development"]
   },
   social: {
-    github: "https://github.com/abusayed",
-    linkedin: "https://linkedin.com/in/abusayed",
+    github: "https://github.com/coder-black-mamba",
+    linkedin: "https://linkedin.com/in/itisabusayed",
     website: "https://absyd.xyz",
-    email: "contact@absyd.xyz",
-    phone: "+880 XXXXXXXXXX"
+    email: "sde.sayed24@gmail.com",
+    phone: "+880 1717963289"
   }
 };

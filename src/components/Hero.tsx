@@ -13,8 +13,8 @@ const Hero = () => {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-20 relative z-10 ">
+        <div className="max-w-6xl mx-auto flex-col md:flex-row flex items-center justify-between">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Terminal-style greeting */}
@@ -38,8 +38,9 @@ const Hero = () => {
             </h2>
 
             {/* Tagline */}
-            <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-              {aboutData.tagline}
+            <p className="text-base md:text-md text-gray-400 max-w-xl mb-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              {/* {aboutData.tagline} */}
+              I'm a Full-Stack Django & MERN Developer and Aspiring AI Engineer who blends solid software engineering with practical ML. I build real-world systems, scalable backends, robust web apps, ML tools, and automation pipelines. Curious and adaptable, I quickly learn any tech a project needs.
             </p>
 
             {/* CTA Buttons */}
@@ -55,15 +56,15 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary/10"
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => window.open("https://drive.google.com/file/d/12ZwVZjGhsDgOXRRHQtsC3JoMc0FHatmX/view?usp=sharing", "_blank")}
               >
-                Get in Touch
+                Download Resume
               </Button>
             </div>
           </div>
 
           {/* Right - Profile Image */}
-          <div className="flex flex-col items-center lg:items-end gap-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-col items-center justify-center  gap-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             {/* Profile Image Container */}
             <div className="relative">
               {/* Glowing border effect */}
@@ -72,8 +73,8 @@ const Hero = () => {
               {/* Image container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary/50 overflow-hidden bg-card/50 backdrop-blur">
                 <img
-                  src="/placeholder.svg"
-                  alt={`${aboutData.name} - Profile`}
+                  src="https://avatars.githubusercontent.com/u/158572665?v=4"
+                  alt="https://avatars.githubusercontent.com/u/158572665?v=4"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -84,7 +85,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links - Pushed to right */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center gap-6 w-full ">
               <a
                 href={aboutData.social.github}
                 target="_blank"

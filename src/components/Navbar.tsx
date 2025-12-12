@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 group">
             <Terminal className="w-6 h-6 text-primary group-hover:animate-pulse-glow transition-all" />
-            <span className="font-mono font-bold text-lg gradient-text">abu.dev</span>
+            <span className="font-mono font-bold text-lg gradient-text">absyd</span>
           </Link>
 
           {/* Desktop Navigation */}
