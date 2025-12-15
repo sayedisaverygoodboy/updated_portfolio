@@ -71,7 +71,7 @@ export const skillCategories: SkillCategory[] = [
 
 export const aboutData = {
   name: "Abu Sayed",
-  title: "Software Engineer",
+  title: "Software Developer",
   tagline: "Building digital experiences that make an impact",
   summary: "Passionate developer focused on creating elegant, user-centric web applications. I combine clean code with creative design to build solutions that not only work flawlessly but also delight users.",
   careerObjective: "To leverage my technical skills and creative problem-solving abilities to build innovative web solutions that make a meaningful impact. I thrive in collaborative environments where I can contribute to team success while continuously learning and growing as a developer.",

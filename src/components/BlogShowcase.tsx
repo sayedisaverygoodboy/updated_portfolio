@@ -1,52 +1,12 @@
 import React from 'react'
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { blogPosts } from "@/data/blogs";
 
-const blogPosts = [
-  {
-    title: "Bringing AI into Everyday Software",
-    summary:
-      "How I rewired our automation pipelines with accessible AI tooling while keeping reliability high.",
-    date: "Dec 10, 2025",
-    readingTime: "6 min read",
-    tags: ["AI", "Automation"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-    url: "/blogs/ai-automation",
-  },
-  {
-    title: "Scaling the RPI Computer Club Website",
-    summary:
-      "The roadmap that guided the redesign, collaboration workflow, and launch of the new club platform.",
-    date: "Aug 14, 2025",
-    readingTime: "5 min read",
-    tags: ["Web", "Leadership"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-    url: "/blogs/rpicc-journey",
-  },
-   {
-    title: "Building a Web App with React and Django",
-    summary:
-      "The roadmap that guided the redesign, collaboration workflow, and launch of the new club platform.",
-    date: "Aug 14, 2025",
-    readingTime: "5 min read",
-    tags: ["Web", "Leadership"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-    url: "/blogs/rpicc-journey",
-  },
-  {
-    title: "Competitive Programming Progressions",
-    summary:
-      "My practice approach that turned 1000+ problems into structured confidence during competitions.",
-    date: "May 02, 2025",
-    readingTime: "4 min read",
-    tags: ["DSA", "Competition"],
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-    url: "/blogs/cp-progress",
-  },
-];
+const heroPost = blogPosts.find((post) => post.featured) ?? blogPosts[0];
+const rest = blogPosts.filter((post) => post !== heroPost);
 
 const BlogShowcase = () => {
-  const [heroPost, ...rest] = blogPosts;
 
   return (
     <section className="py-20">
