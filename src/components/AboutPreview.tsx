@@ -15,7 +15,7 @@ const stats = [
   },
   {
     label: "Problem Solving",
-    value: "1000+ problems",
+    value: "500+ problems",
     detail: "(Competitive Programming) Algorithms, DSA mastery, and competitive programming",
   },
 ];

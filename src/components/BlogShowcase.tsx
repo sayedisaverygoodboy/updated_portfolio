@@ -2,6 +2,7 @@ import React from 'react'
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogs";
+import { Button } from "@/components/ui/button";
 
 const heroPost = blogPosts.find((post) => post.featured) ?? blogPosts[0];
 const rest = blogPosts.filter((post) => post !== heroPost);
@@ -78,6 +79,15 @@ const BlogShowcase = () => {
               </div>
             ))}
           </div>
+         <Link to="/blogs" >
+              <Button
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary/10 group mt-6"
+              >
+                Explore My Blogs
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "lucide-react";
 import certifications from "../data/certifications";
 const Certifications = () => {
   return (
@@ -69,9 +70,10 @@ const Certifications = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary bg-primary/10 transition hover:bg-primary/20"
+                  className="flex items-center justify-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/70 hover:underline text-center"
                 >
                   Show credential
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </article>

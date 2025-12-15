@@ -142,6 +142,15 @@ const ProjectsShowcase = () => {
               </div>
             ))}
           </div>
+          <Link to="/projects" >
+              <Button
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary/10 group mt-6"
+              >
+                View All Projects
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
         </div>
       </div>
     </section>
