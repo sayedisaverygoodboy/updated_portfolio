@@ -1,5 +1,6 @@
 import { Github, Linkedin, Globe, Heart, Terminal } from "lucide-react";
 import { aboutData } from "@/data/skills";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,6 +38,14 @@ const Footer = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={aboutData.social.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <FaWhatsapp className="w-5 h-5" />
               </a>
               <a
                 href={aboutData.social.website}

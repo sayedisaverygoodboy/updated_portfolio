@@ -96,6 +96,7 @@ export const aboutData = {
     linkedin: "https://linkedin.com/in/itisabusayed",
     website: "https://absyd.xyz",
     email: "sde.sayed24@gmail.com",
-    phone: "+880 1717963289"
+    phone: "+880 1717963289",
+    whatsapp: "https://wa.me/8801717963289"
   }
 };

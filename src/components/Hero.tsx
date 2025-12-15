@@ -1,4 +1,5 @@
-import { ArrowDown, Github, Linkedin, Globe } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Globe  } from "lucide-react";
+import {FaWhatsapp} from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { aboutData } from "@/data/skills";
 import { Link } from "react-router-dom";
@@ -104,12 +105,12 @@ const Hero = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href={aboutData.social.website}
+                href={aboutData.social.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors hover-scale"
-              >
-                <Globe className="w-6 h-6" />
+              > 
+              <FaWhatsapp className="w-6 h-6" />
               </a>
             </div>
           </div>
