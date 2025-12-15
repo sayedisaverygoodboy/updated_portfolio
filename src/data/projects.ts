@@ -17,32 +17,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "rpi-computer-club",
-    title: "RPI Computer Club",
-    shortDescription: "App for Rajshahi Polytechnic Institute Computer Club",
-    fullDescription: "Built a modern, responsive platform for the Rajshahi Polytechnic Institute Computer Club. Created fast SPA with React + Vite, using Hooks and Context API. Integrated animations via Framer Motion; fully mobile responsive. Linked social media and added event countdowns & content sections.",
-    role: "Lead Developer",
-    teamSize: "3 People Team",
-    techStack: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "DaisyUI", "React Router"],
-    features: [
-      "Fast SPA with React + Vite",
-      "Hooks and Context API architecture",
-      "Framer Motion animations",
-      "Mobile responsive design",
-      "Social media integration",
-      "Event countdowns & content sections"
-    ],
-    metrics: [
-      { label: "Club Members", value: "500+" },
-      { label: "Event Participation Increase", value: "40%" }
-    ],
-    liveUrl: "https://beta-rpicc.vercel.app",
-    github_frontend: "https://github.com/RPI-Computer-Club-rpicc/rpicc-client",
-    github_backend: "https://github.com/RPI-Computer-Club-rpicc/rpicc-client",
-    image: "/images/rpicc/1.png",
-    more_images:["/images/rpicc/1.png","/images/rpicc/3.png","/images/rpicc/4.png","/images/rpicc/5.png"],
-  },
-  {
     id: "dumbbell-don",
     title: "Dumbbell Don",
     shortDescription: "Full-Stack Fitness & Gym Management Platform",
@@ -57,12 +31,12 @@ export const projects: Project[] = [
       "Progress analytics"
     ],
     metrics: [
-      { label: "Active Users", value: "100+" },
-      { label: "Payment Success Rate", value: "99%" }
+      { label: "Gym Management System", value: "Automated" },
+      { label: "Training Programm Management", value: "Hasselelss" }
     ],
-    liveUrl: "#",
-    github_frontend: "#",
-    github_backend: "#",
+    liveUrl: "https://dumbell-don-client.vercel.app/",
+    github_frontend: "https://github.com/coder-black-mamba/dumbell_don_client",
+    github_backend: "https://github.com/coder-black-mamba/dumbbell_don",
     image: "/images/dumbbell_don/1.png",
     more_images:["/images/dumbbell_don/2.png","/images/dumbbell_don/3.png","/images/dumbbell_don/4.png","/images/dumbbell_don/5.png"],
   },
@@ -84,11 +58,37 @@ export const projects: Project[] = [
       { label: "Events Managed", value: "50+" },
       { label: "Workflow Reduction", value: "40%" }
     ],
-    liveUrl: "#",
-    github_frontend: "#",
-    github_backend: "#",
+    liveUrl: "https://event-mannagment-system.vercel.app/",
+    github_frontend: "https://github.com/coder-black-mamba/event_mannagment_system",
+    github_backend: "https://github.com/coder-black-mamba/event_mannagment_system",
     image: "/images/djb_ems/1.png",
     more_images:["/images/djb_ems/2.png","/images/djb_ems/3.png","/images/djb_ems/4.png","/images/djb_ems/5.png"],
+  },
+  {
+    id: "rpi-computer-club",
+    title: "RPI Computer Club",
+    shortDescription: "App for Rajshahi Polytechnic Institute Computer Club",
+    fullDescription: "Built a modern, responsive platform for the Rajshahi Polytechnic Institute Computer Club. Created fast SPA with React + Vite, using Hooks and Context API. Integrated animations via Framer Motion; fully mobile responsive. Linked social media and added event countdowns & content sections.",
+    role: "Lead Developer",
+    teamSize: "3 People Team",
+    techStack: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "DaisyUI", "React Router"],
+    features: [
+      "Fast SPA with React + Vite",
+      "Hooks and Context API architecture",
+      "Framer Motion animations",
+      "Mobile responsive design",
+      "Social media integration",
+      "Event countdowns & content sections"
+    ],
+    metrics: [
+      { label: "Club Members", value: "500+" },
+      { label: "Event Participation Increase", value: "40%" }
+    ],
+    liveUrl: "https://beta-rpicc.vercel.app",
+    github_frontend: "https://github.com/RPI-Computer-Club-rpicc/rpicc-client",
+    github_backend: "https://github.com/RPI-Computer-Club-rpicc/rpicc-server-django",
+    image: "/images/rpicc/1.png",
+    more_images:["/images/rpicc/1.png","/images/rpicc/3.png","/images/rpicc/4.png","/images/rpicc/5.png"],
   }
 ];
 
