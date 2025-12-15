@@ -19,8 +19,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Projects", href: "/#projects" },
+    // { name: "Skills", href: "/#skills" },
+    { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/#contact" },
     { name: "Blogs", href: "/blogs" },
   ];
@@ -41,14 +41,18 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"
+        scrolled
+          ? "bg-background/90 backdrop-blur-lg border-b border-border"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 group">
             <Terminal className="w-6 h-6 text-primary group-hover:animate-pulse-glow transition-all" />
-            <span className="font-mono font-bold text-lg gradient-text">absyd</span>
+            <span className="font-mono font-bold text-lg gradient-text">
+              absyd
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -71,13 +75,14 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
-            <Button
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              onClick={() => scrollToSection("/#contact")}
-            >
-              Let's Talk
-            </Button>
+            <a href="https://wa.me/8801717963289">
+              <Button
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              >
+                Let's Talk
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -112,12 +117,11 @@ const Navbar = () => {
                   )}
                 </button>
               ))}
-              <Button
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                onClick={() => scrollToSection("/#contact")}
-              >
-                Let's Talk
-              </Button>
+              <a href="https://wa.me/8801717963289">
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  Let's Talk
+                </Button>
+              </a>
             </div>
           </div>
         )}
