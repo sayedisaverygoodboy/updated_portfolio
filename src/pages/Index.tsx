@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Abu Sayed | Frontend & Full-Stack Developer</title>
+        <title>Abu Sayed | Software Developer</title>
         <meta
           name="description"
           content="Abu Sayed is a passionate Frontend & Full-Stack Developer building elegant, user-centric web applications. View portfolio and projects."
