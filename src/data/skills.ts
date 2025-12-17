@@ -89,7 +89,19 @@ export const aboutData = {
     degree: "Diploma in Computer Technology",
     institution: "Rajshahi Polytechnic Institute",
     status: "Currently Pursuing",
-    highlights: ["Strong foundation in programming", "Focus on practical application development"]
+    location: "Rajshahi, Bangladesh",
+    duration: "2021 — Present",
+    gpa: "3.8 / 4.0",
+    focusAreas: ["Full-stack development", "Systems design", "Embedded software"],
+    description:
+      "Immersed in a rigorous curriculum that blends hardware fundamentals with advanced software engineering practices. I build real-world applications and keep polishing my design thinking.",
+    capstone: "Leading a team to architect an automated inventory management portal with analytics dashboards.",
+    relevantCourses: ["Data Structures & Algorithms", "Database Systems", "Embedded Systems Design", "Human Computer Interaction"],
+    highlights: [
+      "Strong foundation in programming",
+      "Focus on practical application development",
+      "Collaborative lab work delivering production-grade prototypes"
+    ]
   },
   social: {
     github: "https://github.com/coder-black-mamba",
