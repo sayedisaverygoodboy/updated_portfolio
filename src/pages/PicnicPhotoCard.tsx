@@ -169,7 +169,7 @@ const exportPNG = async () => {
                     </div>
                 )}
 
-                <p className="absolute top-[350px] z-10  left-[40px] text-center text-md text-white   px-3 py-1 rounded bg-rose-600 "> {giveFunnySurname(name)}</p>
+                <p className="absolute top-[350px] z-10  left-[20px] text-center text-sm text-white   px-3 py-1 rounded bg-rose-600 "> {giveFunnySurname(name)}</p>
 
                 <h2 className="absolute top-[360px] left-1/2 -translate-x-1/2 text-center text-2xl font-extrabold text-gray-200 bg-gray-600 px-4 py-2 rounded-xl border-gray-200 border-2 w-[300px]">{name.trim().substring(0, 15) || "YOUR NAME"}</h2>
 
