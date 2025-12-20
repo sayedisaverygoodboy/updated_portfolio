@@ -1,20 +1,8 @@
 import React, { ChangeEvent, useCallback, useState } from "react";
 import { toPng } from "html-to-image";
 
-const backgroundSrc = "/images/picnic/picnic_card.png";
-const exportPNG = async () => {
-  const node = document.getElementById("photo_card");
+const backgroundSrc = "/images/picnic/picnic_id_card.png";
 
-  const dataUrl = await toPng(node, {
-    quality: 1,
-    pixelRatio: 2, // higher = sharper image
-  });
-
-  const link = document.createElement("a");
-  link.download = "export.png";
-  link.href = dataUrl;
-  link.click();
-};
 const PicnicPhotoCard = () => {
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
@@ -97,24 +85,36 @@ const PicnicPhotoCard = () => {
     link.download = `picnic-photo-card-${Date.now()}.png`;
     link.click();
   }, [photo, name, picnicId, loadImage]);
+const exportPNG = async () => {
+  const node = document.getElementById("photo_card");
 
+  const dataUrl = await toPng(node, {
+    quality: 1,
+    pixelRatio: 2, // higher = sharper image
+  });
+
+  const link = document.createElement("a");
+  link.download =  `picnic-photo-card-${picnicId || "TBD"}.png`;
+  link.href = dataUrl;
+  link.click();
+};
   const handleDownload= async ()=>{
    await exportPNG();
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#fefcf7] via-[#fdf0d5] to-[#eefdff] px-4 py-12 text-slate-900">
-      <div className="mx-auto flex max-w-5xl flex-col gap-8 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-2xl shadow-slate-200">
-        <header className="space-y-2 text-center">
+    <div className="min-h-screen bg-gradient-to-b from-[#fefcf7] via-[#fdf0d5] to-[#eefdff]  py-3 text-slate-900">
+      <div className="mx-auto flex max-w-5xl flex-col   rounded-3xl border border-slate-200 bg-white/80 py-3 px-2 shadow-2xl shadow-slate-200">
+        <header className="space-y-2 text-center py-3">
           <p className="text-xs uppercase tracking-[0.4em] text-slate-500">Picnic 2025</p>
-          <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Generate your photo card</h1>
+          <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Generate your ID card</h1>
           <p className="text-sm text-slate-600">
             Upload a memory, add your name &amp; ID, and download a keepsake ready for sharing or printing.
           </p>
         </header>
 
-        <section className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
-          <div className="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-inner shadow-slate-100">
+        <section className=" flex md:flex-row flex-col justify-between w-full">
+          <div className="flex flex-col gap-4   border border-slate-200 bg-slate-50 p-5 shadow-inner shadow-slate-100 w-full md:w-1/2">
             <div>
               <label className="text-sm font-medium text-slate-700">Your photo</label>
               <input
@@ -130,12 +130,12 @@ const PicnicPhotoCard = () => {
                 type="text"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                placeholder="e.g. Ananya Rahman"
+                placeholder="e.g. Fahmida Eva"
                 className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none transition focus:border-primary"
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-slate-700">Picnic ID</label>
+              <label className="text-sm font-medium text-slate-700">RPI Roll No . (used in the registration)</label>
               <input
                 type="text"
                 value={picnicId}
@@ -148,27 +148,30 @@ const PicnicPhotoCard = () => {
               onClick={handleDownload}
               className="mt-2 rounded-full bg-gradient-to-r from-[#f97316] to-[#fb923c] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-xl shadow-orange-200 transition hover:opacity-90"
             >
-              Download photo card
+              Download ID card
             </button>
           </div>
+          {/* <div className="my-3"></div> */}
 
-          <div className="relative flex items-center justify-center overflow-hidden   bg-slate-50   shadow-2xl   ">
+          <div className="relative flex items-center justify-center overflow-hidden   shadow-2xl   w-full md:w-1/2 p-3  bg-slate-50">
             {/* <div className="absolute inset-0 bg-white/20" /> */}
             <div className="relative w-[400px] h-[600px] text-white " id="photo_card">
-                <img src={backgroundSrc} alt="Picnic card preview" className="absolute top-0 left-0 h-full w-full object-cover" />
+                <img src={backgroundSrc} alt="Picnic card preview" className="absolute top-0 left-0 h-full w-full object-cover rounded" />
                 {photo ? (
                     <img
                     src={photo}
                     alt="Uploaded preview"
-                    className="absolute top-[130px] left-[85px] h-56 w-56 rounded-full border-4 border-white object-cover shadow-xl"
+                    className="absolute top-[170px] left-1/2 -translate-x-1/2 h-[220px] w-[220px] rounded-full border-4 border-gray-200 object-cover shadow-xl "
                     />
                 ) : (
-                    <div className="flex h-56 w-56 items-center justify-center rounded-full border-4 border-white bg-white/80 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
+                    <div className="absolute top-[170px] left-1/2 -translate-x-1/2 h-[200px] w-[200px] flex   items-center justify-center rounded-full border-4 border-gray-200 bg-gray-600 text-xs font-extrabold uppercase tracking-[0.3em] text-gray-200">
                     Upload photo
                     </div>
                 )}
-                <h2 className="absolute top-[355px] left-1/2 -translate-x-1/2 text-center text-xl font-bold text-white">{name.trim() || "YOUR NAME"}</h2>
-                <p className="absolute top-[405px] left-[140px] text-center text-md text-gray-800"> {picnicId.trim() || "TBD"}</p>
+                <h2 className="absolute top-[360px] left-1/2 -translate-x-1/2 text-center text-2xl font-extrabold text-gray-200 bg-gray-600 px-4 py-2 rounded-xl border-gray-200 border-2 w-[300px]">{name.trim() || "YOUR NAME"}</h2>
+
+
+                <p className="absolute top-[430px] left-1/2 -translate-x-1/2 text-center text-xl text-gray-600 font-extrabold    ">ID: {picnicId.trim() || "TBD"}</p>
             </div>
           </div>
         </section>
