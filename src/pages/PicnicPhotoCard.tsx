@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useCallback, useState } from "react";
 import { toPng } from "html-to-image";
-
+import { giveFunnySurname } from "../lib/utils";
 const backgroundSrc = "/images/picnic/picnic_id_card.png";
 
 const PicnicPhotoCard = () => {
@@ -168,10 +168,13 @@ const exportPNG = async () => {
                     Upload photo
                     </div>
                 )}
-                <h2 className="absolute top-[360px] left-1/2 -translate-x-1/2 text-center text-2xl font-extrabold text-gray-200 bg-gray-600 px-4 py-2 rounded-xl border-gray-200 border-2 w-[300px]">{name.trim() || "YOUR NAME"}</h2>
+
+                <p className="absolute top-[350px] z-10  left-[40px] text-center text-md text-white   px-3 py-1 rounded bg-rose-600 "> {giveFunnySurname(name)}</p>
+
+                <h2 className="absolute top-[360px] left-1/2 -translate-x-1/2 text-center text-2xl font-extrabold text-gray-200 bg-gray-600 px-4 py-2 rounded-xl border-gray-200 border-2 w-[300px]">{name.trim().substring(0, 15) || "YOUR NAME"}</h2>
 
 
-                <p className="absolute top-[430px] left-1/2 -translate-x-1/2 text-center text-xl text-gray-600 font-extrabold    ">ID: {picnicId.trim() || "TBD"}</p>
+                <p className="absolute top-[430px] left-1/2 -translate-x-1/2 text-center text-md text-gray-600 font-extrabold    ">ID: {picnicId.trim() || "TBD"}</p>
             </div>
           </div>
         </section>
