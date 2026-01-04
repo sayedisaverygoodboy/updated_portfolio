@@ -10,8 +10,6 @@ import NotFound from "./pages/NotFound";
 import Blogs from "./pages/Blogs";
 import SingleBlog from "./pages/SingleBlog";
 import Projects from "./pages/Projects";
-import Picnic2025 from "./pages/Picnic2025";
-import PicnicPhotoCard from "./pages/PicnicPhotoCard";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,9 +24,9 @@ const App = () => (
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:id" element={<SingleBlog />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/picnic" element={<Picnic2025 />} />
+          {/* <Route path="/picnic" element={<Picnic2025 />} /> */}
           
-          <Route path="/picnic-card" element={<PicnicPhotoCard />} />
+          {/* <Route path="/picnic-card" element={<PicnicPhotoCard />} /> */}
           <Route path="/project/:id" element={<ProjectDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
