@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, X, Terminal, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +77,13 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <a href="https://wa.me/8801717963289">
               <Button
                 variant="outline"
@@ -117,6 +126,12 @@ const Navbar = () => {
                   )}
                 </button>
               ))}
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-left text-muted-foreground hover:text-primary transition-colors py-2"
+              >
+                {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+              </button>
               <a href="https://wa.me/8801717963289">
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                   Let's Talk
