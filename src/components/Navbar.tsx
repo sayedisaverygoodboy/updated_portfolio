@@ -126,6 +126,12 @@ const Navbar = () => {
                   )}
                 </button>
               ))}
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-left text-muted-foreground hover:text-primary transition-colors py-2"
+              >
+                {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+              </button>
               <a href="https://wa.me/8801717963289">
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                   Let's Talk
