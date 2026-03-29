@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, X, Terminal, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
