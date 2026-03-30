@@ -15,12 +15,12 @@ const Hero = () => {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-4 py-20 relative z-10 ">
+      <div className="container mx-auto px-4 py-16 relative z-10 ">
         <div className="max-w-6xl mx-auto flex-col md:flex-row flex items-center justify-between">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Terminal-style greeting */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur mb-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur mb-6 animate-fade-in">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <code className="text-sm text-muted-foreground font-mono">
                 ~/portfolio $ <span className="text-primary">whoami</span>
@@ -34,19 +34,25 @@ const Hero = () => {
             </h1>
 
             {/* Title */}
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              {aboutData.title}
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              {aboutData.title}  & Aspiring AI Engineer
               <span className="terminal-cursor" />
             </h2>
+            
+            <hr className="w-1/2 my-6 border-gray-300" />
 
             {/* Tagline */}
-            <p className="text-base md:text-md text-gray-400 max-w-xl mb-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-              {/* {aboutData.tagline} */}
-              I'm a Full-Stack Django & MERN Developer and Aspiring AI Engineer who blends solid software engineering with practical ML. I build real-world systems, scalable backends, robust web apps, ML tools, and automation pipelines. Curious and adaptable, I quickly learn any tech a project needs.
-            </p>
+            <div className="text-base md:text-md text-gray-400 max-w-xl mb-10 animate-slide-up space-y-3" style={{ animationDelay: "0.3s" }}>
+              <p>
+                I'm a Full-Stack Django & MERN Developer and Aspiring AI Engineer who blends solid software engineering with practical ML.
+              </p>
+              <p>
+                I build real-world systems, scalable backends, robust web apps, ML tools, and automation pipelines. Curious and adaptable, I quickly learn any tech a project needs.
+              </p>
+            </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-8 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-10 animate-slide-up" style={{ animationDelay: "0.4s" }}>
               <Button
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 hover-glow px-8"
@@ -66,7 +72,7 @@ const Hero = () => {
           </div>
 
           {/* Right - Profile Image */}
-          <div className="flex flex-col items-center justify-center  gap-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-col items-center justify-center  gap-6 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             {/* Profile Image Container */}
             <div className="relative">
               {/* Glowing border effect */}
@@ -87,7 +93,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links - Pushed to right */}
-            <div className="flex items-center justify-center gap-6 w-full ">
+            <div className="flex items-center justify-center gap-4 w-full ">
               <a
                 href={aboutData.social.github}
                 target="_blank"
