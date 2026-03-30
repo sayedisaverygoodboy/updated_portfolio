@@ -73,9 +73,9 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary blur-xl opacity-50 animate-pulse" />
               
               {/* Image container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary/50 overflow-hidden bg-card/50 backdrop-blur">
+              <div className="relative w-64 h-64 md:w-[400px] md:h-[400px] rounded-full border-4 border-primary/50 overflow-hidden bg-card/50 backdrop-blur">
                 <img
-                  src="https://avatars.githubusercontent.com/u/158572665?v=4"
+                  src="images/myself/prof-4.jpg"
                   alt="https://avatars.githubusercontent.com/u/158572665?v=4"
                   className="w-full h-full object-cover"
                 />
